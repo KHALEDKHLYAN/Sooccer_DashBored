@@ -5,13 +5,12 @@ name: Scoreboard CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,7 +22,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '19'
-          cache: 'yarn'
+          node-version: "19"
+          cache: "yarn"
       - run: yarn install
       - run: yarn test
